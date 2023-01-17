@@ -1,14 +1,14 @@
 from app import app
-from app import Niggas
+from app import classcode
 from flask import render_template
-# import Niggas
+
 
 
 @app.route('/')
 @app.route('/index')
 def index():
-    classroom = Niggas.classRoom()
-    DAY, TIME = Niggas.timenow()
+    classroom = classcode.classRoom()
+    DAY, TIME = classcode.timenow()
     return render_template('index.html', classroom=classroom, DAY=DAY, TIME=TIME)
 
 
