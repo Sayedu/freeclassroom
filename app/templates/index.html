@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+    .btn {
+    background-color: #32335e;
+    border: none;
+    color: #ddd0a7;
+    padding: 16px;
+    text-align: center;
+    font-size: 18px;
+    margin: 4px 2px;
+    transition: 0.4s;
+    }
+
+    .btn:hover {
+    background-color: #ECC9C7;
+    color: white;
+    }
+
+    img {
+    text-align: center;
+
+    width: 80%;
+    height: 500px;
+    }
+
+
+</style>
+
+
+</head>
+<body style="background-color:#C2C2B4;">
+
+
+<center><img src="https://cdn.mwallpapers.com/photos/celebrities/music/am-lo-fi-hip-hop-jazzhop-chillhop-mix-study-sleep-relax-music-android-iphone-hd-wallpaper-background-downloadhd-wallpapers-desktop-background-android-iphone-1080p-4k-y02jr.jpg" alt="Trulli" >
+
+</center><br>
+
+<p><center><font size="5"> Today's day and time is: {{ DAY }}  {{ TIME }} </font></center></P>
+
+<center><button class="btn" value="Refresh Page" onClick="window.location.reload();" >Click To Refresh</button></center>
+
+<p>
+{% for key, value in classroom.items() %}
+       <center><font size="5"><b>{{ key }}</b> {{value}} <br><br> </font></center>
+{% endfor %}
+
+</p>
+
+</body>
+</html>
