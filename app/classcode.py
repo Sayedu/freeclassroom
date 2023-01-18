@@ -304,9 +304,13 @@ def to_reg_time(min_time, change_time):
 
 def classRoom():
     currentTime = datetime.today().strftime("%I:%M%p")
+    military = datetime.today().strftime("%H%M")
     currentDay = int(datetime.today().strftime("%w"))
     week = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
     product = {}
+    if int(military) in range(0000, 630):
+        product["Go HOME"] = ""
+        return product
 
     min_cur_time = to_min(currentTime)
     for room in roomAndTimeSpring[week[currentDay]]:
@@ -323,4 +327,6 @@ def classRoom():
                 product[room] = " IS FREE TILL " + to_reg_time(times[i + 1], False) + " YOU HAVE " + str(minutes) + " MINUTES LEFT TILL NEXT CLASS"
 
                 break
+    if product.__len__() == 0:
+        product["NO EMPTY CLASS AVAILABLE RIGHT NOW COME BACK LATER"] = ""
     return product

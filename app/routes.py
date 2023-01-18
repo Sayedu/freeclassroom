@@ -12,3 +12,5 @@ def index():
     return render_template('index.html', classroom=classroom, DAY=DAY, TIME=TIME)
 
 
+if __name__ == '__main__':
+    app.run(port=5000)
